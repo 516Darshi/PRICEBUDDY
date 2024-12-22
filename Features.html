@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - PriceBuddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e8f9fd, #d9f2f8);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #005f73, #0a9396);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .slider-container {
+            width: 80%; 
+            height: 100%; 
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: auto;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 400%;
+            height: 100%; 
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            flex-direction: column;
+        }
+
+        #slide1:checked ~ .slider .slide:nth-child(1) {
+            background-image: url('RealTimePrice.png');
+        }
+
+        #slide2:checked ~ .slider .slide:nth-child(2) {
+            background-image: url('FeaturesComparison.png');
+        }
+
+        #slide3:checked ~ .slider .slide:nth-child(3) {
+            background-image: url('AiRecommendation.png');
+        }
+
+        #slide4:checked ~ .slider .slide:nth-child(4) {
+            background-image: url('PriceAlerts.png');
+        }
+
+        .slide h2 {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .slide p {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .radio-controls {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .radio-controls label {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked + label {
+            background: #333;
+        }
+
+        #slide1:checked ~ .slider { transform: translateX(0); }
+        #slide2:checked ~ .slider { transform: translateX(-100%); }
+        #slide3:checked ~ .slider { transform: translateX(-200%); }
+        #slide4:checked ~ .slider { transform: translateX(-300%); }
+
+        .footer {
+            background: linear-gradient(90deg, #005f73, #0a9396);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Features</h1>
+    </header>
+    <div class="slider-container">
+        <input type="radio" id="slide1" name="slider-control" checked>
+        <input type="radio" id="slide2" name="slider-control">
+        <input type="radio" id="slide3" name="slider-control">
+        <input type="radio" id="slide4" name="slider-control">
+
+        <div class="slider">
+            <div class="slide">
+                <h2>Real-time Comparison</h2>
+                <p>Compare product prices and details across platforms instantly.</p>
+            </div>
+            <div class="slide">
+                <h2>Feature Comparison</h2>
+                <p>Easily compare product features side-by-side to make the best choice.</p>
+            </div>
+            <div class="slide">
+                <h2>AI Recommendations</h2>
+                <p>Get personalized product recommendations powered by AI.</p>
+            </div>
+            <div class="slide">
+                <h2>Price Alerts</h2>
+                <p>Receive notifications when prices drop for your favorite products.</p>
+            </div>
+        </div>
+
+        <div class="radio-controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 PriceBuddy</p>
+    </footer>
+</body>
+</html>
+

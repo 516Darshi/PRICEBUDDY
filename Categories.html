@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - PriceBuddy</title>
+    <Style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Categoriesimg.png') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vh;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            perspective: 1000px;
+            padding-left: 50px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+
+        .category {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(calc(var(--i) * 72deg)) translateZ(250px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 1;
+        }
+
+        .category img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .category h3 {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+
+        .carousel .category {
+            backface-visibility: hidden;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .title {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #005f73, #0a9396);
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute; 
+            left: 0;
+            margin: 0;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    </Style>
+</head>
+
+<body>
+    <div class="title"><h2>Product Categories</h2></div>
+    <div class="container">
+        <div class="carousel">
+            <div class="category" style="--i: 0;">
+                <img src="HomeGoodsimg.png" alt="Home Goods">
+                <h3>Home Goods</h3>
+            </div>
+
+            <div class="category" style="--i: 1;">
+                <img src="Fashionimg.png" alt="Fashion">
+                <h3>Fashion</h3>
+            </div>
+
+            <div class="category" style="--i: 2;">
+                <img src="Makeupimg.png" alt="Beauty Products">
+                <h3>Beauty Products</h3>
+            </div>
+
+            <div class="category" style="--i: 3;">
+                <img src="Bookimg.png" alt="Books">
+                <h3>Books</h3>
+            </div>
+
+            <div class="category" style="--i: 4;">
+                <img src="Electronicsimg.png" alt="Electronics">
+                <h3>Electronics</h3>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 PriceBuddy</p>
+    </footer>
+</body>
+</html>
